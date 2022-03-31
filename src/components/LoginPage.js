@@ -9,22 +9,9 @@ import { StyledLoginPage } from "../styles/LoginPage.styled.js";
 
 function LoginPage() {
   const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-
-  const [newUser, setNewUser] = useState({
     userName: "",
-    email: "",
     password: "",
   });
-
-  //for signing up
-  const handleChangeNewUser = (event) => {
-    const newUser = { ...user };
-    newUser[event.target.name] = event.target.value;
-    setNewUser(newUser);
-  };
 
   //for login
   const handleChangeUser = (event) => {
@@ -47,16 +34,15 @@ function LoginPage() {
     <ContainerVerticalFull>
       <StyledLoginPage>
         <ContainerVertical>
-          <h1>MyRealEstate</h1>
           <h1>Welcome Back</h1>
           <p>Sign in with your account</p>
           <form onSubmit={handleSignIn}>
             <Input
-              placeholder="Email"
+              placeholder="Username"
               onChange={handleChangeUser}
-              name="email"
+              name="userName"
               type="text"
-              value={user.email}
+              value={user.userName}
             />
             <Input
               placeholder="Password"
@@ -65,7 +51,7 @@ function LoginPage() {
               type="text"
               value={user.password}
             />
-            <Button>SIGN IN</Button>
+            <Button onClick={handleSignIn}>SIGN IN</Button>
           </form>
         </ContainerVertical>
         <ContainerVertical>
@@ -76,26 +62,19 @@ function LoginPage() {
           <form onSubmit={handleSignUp}>
             <Input
               placeholder="Username"
-              onChange={handleChangeNewUser}
+              onChange={handleChangeUser}
               name="userName"
               type="text"
-              value={newUser.userName}
-            />
-            <Input
-              placeholder="Email"
-              onChange={handleChangeNewUser}
-              name="email"
-              type="text"
-              value={newUser.email}
+              value={user.userName}
             />
             <Input
               placeholder="Password"
-              onChange={handleChangeNewUser}
+              onChange={handleChangeUser}
               name="password"
               type="text"
-              value={newUser.password}
+              value={user.password}
             />
-            <Button>SIGN UP</Button>
+            <Button onClick={handleSignUp}>SIGN UP</Button>
           </form>
         </ContainerVertical>
       </StyledLoginPage>

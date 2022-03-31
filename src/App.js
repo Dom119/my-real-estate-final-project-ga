@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/Global.js";
 import LandingPage from "./components/LandingPage";
 import LoginPage from "./components/LoginPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <>
         <GlobalStyles />
         <BrowserRouter>
+          <NavBar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="login" element={<LoginPage />} />

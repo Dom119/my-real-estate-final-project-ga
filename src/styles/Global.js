@@ -5,7 +5,7 @@ export const theme = {
   colors: {
     action: "#E4002B",
     background: "#F6F5F7",
-    backgroundSecond:"FFFFFF",
+    backgroundSecond: "FFFFFF",
     textPrimary: "#3D3B40",
     textSecondary: "#74727B",
     textAction: "#00639E",
@@ -28,6 +28,29 @@ span{
     color: ${({ theme }) => theme.colors.textAction};
     
 }
+a{
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.15px;
+  outline: none;
+  text-decoration: none;
+  border: 1px solid;
+  background-color: ${({ theme }) => theme.colors.action};
+  color: ${({ theme }) => theme.colors.background};
+  border-color: ${({ theme }) => theme.colors.background};
+  transition: 0.3s;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.action};
+    border-color: ${({ theme }) => theme.colors.action};
+    cursor: pointer;
+    border: 1px solid;
+  }
+}
 `;
 
 export const ContainerVerticalFull = styled.div`
@@ -48,6 +71,14 @@ export const ContainerHorizontal = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+`;
+export const Container = styled.div`
+  width: 60%;
+  margin: 0 auto;
+`;
+export const BigContainer = styled.div`
+  width: 92.5%;
+  margin: 0 auto;
 `;
 export const Button = styled.button`
   margin: 20px;
