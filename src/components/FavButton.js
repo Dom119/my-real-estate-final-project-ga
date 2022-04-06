@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser, updateFav } from "../features/user/userSlice";
 
-export default function FavButton({ propertyID }) {
+export default function FavButton({ propertyID, current }) {
   const [isFav, setIsFav] = useState(false);
   const dispatch = useDispatch();
 
   const currentUser = useSelector(selectUser);
 
   const updateFavDatabase = async (newFav) => {
+    console.log("new fav to update", newFav);
     const response = await fetch("/api/users/fav", {
       method: "PATCH",
       body: JSON.stringify({
@@ -28,13 +29,16 @@ export default function FavButton({ propertyID }) {
     setIsFav(!isFav);
     if (isFav) {
       const newFavList = currentUser.fav.filter(
-        (element) => element !== propertyID
+        (element) => element.propertyID !== propertyID
       );
       updateFavDatabase(newFavList);
 
       console.log("in handle fav button", newFavList);
     } else {
-      const newFavList = [...currentUser.fav, propertyID];
+      const newFavList = [
+        ...currentUser.fav,
+        { propertyID: propertyID, data: current },
+      ];
       updateFavDatabase(newFavList);
 
       console.log("in handle fav button", newFavList);
@@ -43,7 +47,7 @@ export default function FavButton({ propertyID }) {
 
   useEffect(() => {
     currentUser.fav.forEach((ele) => {
-      if (ele == propertyID) {
+      if (ele.propertyID == propertyID) {
         console.log("checking ele: ", ele, propertyID);
         setIsFav(true);
       }

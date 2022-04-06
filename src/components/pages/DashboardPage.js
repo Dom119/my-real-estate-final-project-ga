@@ -9,8 +9,8 @@ export default function DashboardPage() {
 
   return (
     <div>
-      {user.fav.map((id) => (
-        <DashboardPageProperty propertyID={id} key={nanoid()} />
+      {user.fav.map((ele) => (
+        <DashboardPageProperty key={nanoid()} data={ele.data} propertyID={ele.propertyID} />
       ))}
     </div>
   );

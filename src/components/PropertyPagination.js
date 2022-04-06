@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { StyledPropertyPagination } from "../styles/PropertyPagination.styled";
 import { useSelector, useDispatch } from "react-redux";
 import { changePage, selectSearch } from "../features/search/searchSlice";
+import KEY from "../utiles/key";
 
 export default function PropertyPagination() {
   const search = useSelector(selectSearch);
@@ -18,7 +19,7 @@ export default function PropertyPagination() {
         {
           method: "POST",
           headers: {
-            "X-Api-Key": "key_0b3d8ee46aaf1fb6aed1cdf83be6a6e3",
+            "X-Api-Key": KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(searchTrial),

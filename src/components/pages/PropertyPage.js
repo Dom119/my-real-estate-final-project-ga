@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   MyCarousel,
   PropertyDetails,
@@ -7,29 +7,27 @@ import {
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectData } from "../../features/data/dataSlice";
-import { selectUser} from "../../features/user/userSlice";
+import { selectUser } from "../../features/user/userSlice";
 import FavButton from "../FavButton";
 
 export default function Property() {
   let params = useParams();
-  
+  // const [current, setCurrent] = useState();
 
   const currentData = useSelector(selectData);
   const currentUser = useSelector(selectUser);
 
   const [photoIndex, setPhotoIndex] = useState(0);
 
-
   let current;
   currentData.forEach((property) => {
     if (property.type === "PropertyListing") {
       if (property.listing.id == params.id) {
-        current = { ...property.listing };
+        current ={ ...property.listing };
       }
     }
   });
 
- 
   return (
     <StyledProperties>
       <MyCarousel>
@@ -58,7 +56,9 @@ export default function Property() {
       </MyCarousel>
       <PropertyDetails>
         {/* You need to login to see the fav button */}
-        {currentUser.userName !== "" && <FavButton propertyID={params.id} />}
+        {currentUser.userName !== "" && (
+          <FavButton propertyID={params.id} current={current} />
+        )}
 
         <div>{current.advertiser.name}</div>
         <div>

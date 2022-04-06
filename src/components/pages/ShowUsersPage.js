@@ -39,7 +39,7 @@ export default function ShowUsers() {
           <h3>Password: {user.password}</h3>
           <h3>Favorite</h3>
           {user.fav.map((f, index) => (
-            <li key={index}>{f}</li>
+            <li key={index}>{f.propertyID}</li>
           ))}
           <button onClick={() => handleDeleteUser(user.userName)}>
             Delete User

@@ -6,6 +6,7 @@ import { selectData, setData } from "../../features/data/dataSlice";
 import { nanoid } from "nanoid";
 import PropertyPagination from "../PropertyPagination";
 import { Link } from "react-router-dom";
+import KEY from "../../utiles/key";
 
 export default function PropertiesPage() {
   const search = useSelector(selectSearch);
@@ -19,7 +20,7 @@ export default function PropertiesPage() {
         {
           method: "POST",
           headers: {
-            "X-Api-Key": "key_0b3d8ee46aaf1fb6aed1cdf83be6a6e3",
+            "X-Api-Key": KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify(search),
@@ -55,9 +56,7 @@ export default function PropertiesPage() {
                   <h3>{house.listing.propertyDetails.bedrooms} Bedrooms</h3>
                   <h3>{house.listing.propertyDetails.carspaces} Carspaces</h3>
                 </div>
-                <Link to={`/properties/${house.listing.id}`}>
-                  Details
-                </Link>
+                <Link to={`/properties/${house.listing.id}`}>Details</Link>
                 <div>
                   <h3>Contact: {house.listing.advertiser.contacts[0].name}</h3>
                   <img
