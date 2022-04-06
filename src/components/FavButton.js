@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser, updateFav } from "../features/user/userSlice";
+import { StyledFavButton } from "../styles/FavButton.styled";
+import star1 from "../asset/img/star1.png";
+import star2 from "../asset/img/star2.png";
 
 export default function FavButton({ propertyID, current }) {
   const [isFav, setIsFav] = useState(false);
@@ -55,8 +58,10 @@ export default function FavButton({ propertyID, current }) {
   }, []);
 
   return (
-    <>
-      <button onClick={handleFavButton}>{isFav ? "Undo Fav" : "Fav"}</button>
-    </>
+    <StyledFavButton>
+      <button onClick={handleFavButton}>
+        {isFav ? <img src={star1} /> : <img src={star2} />}
+      </button>
+    </StyledFavButton>
   );
 }

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "../../styles/Global";
+import { StyledAllUsers } from "../../styles/ShowAllUsers.styled";
 
 export default function ShowUsers() {
   const [users, setUsers] = useState([]);
@@ -32,7 +34,7 @@ export default function ShowUsers() {
     fetching();
   }, []);
   return (
-    <div>
+    <StyledAllUsers>
       {users.map((user, index) => (
         <div key={index}>
           <h3>Username: {user.userName}</h3>
@@ -41,11 +43,11 @@ export default function ShowUsers() {
           {user.fav.map((f, index) => (
             <li key={index}>{f.propertyID}</li>
           ))}
-          <button onClick={() => handleDeleteUser(user.userName)}>
+          <Button onClick={() => handleDeleteUser(user.userName)}>
             Delete User
-          </button>
+          </Button>
         </div>
       ))}
-    </div>
+    </StyledAllUsers>
   );
 }

@@ -26,12 +26,6 @@ app.get("/", (req, res) => res.sendFile(path.join(publicPath, "index.html")));
 // ******  add sudo database and two models *******
 // seed data
 
-const elon = {
-  _id: 1,
-  userName: "Elon Musk",
-  password: "spaceiscool",
-  fav: [],
-};
 const dom = {
   _id: 2,
   userName: "Dom",
@@ -47,7 +41,7 @@ const User = {
   fav: [],
 };
 
-let Users = [elon, dom];
+let Users = [dom];
 
 let idUserCount = 2;
 

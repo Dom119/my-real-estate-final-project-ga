@@ -5,9 +5,11 @@ export const StyledProperties = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .contact{
-      width: 100px;
-      border-radius: 50px;
+
+  margin: 50px;
+  .contact {
+    width: 100px;
+    border-radius: 50px;
   }
 `;
 
@@ -19,7 +21,8 @@ export const MyCarousel = styled.div`
   align-items: center;
   position: relative;
   img {
-    width: 500px;
+    width: 700px;
+    max-width: 90vw;
   }
   button {
     background-color: transparent;
@@ -27,6 +30,15 @@ export const MyCarousel = styled.div`
     height: 50px;
     border-radius: 100px;
     font-size: 40px;
+    border: 1px solid;
+    font-size: 15px;
+    margin: 20px;
+    :hover{
+      background-color: white;
+      color:black;
+      border-color: white;
+      transition: 0.3s ease-in-out;
+    }
   }
   .leftButton {
     position: absolute;
@@ -38,5 +50,14 @@ export const MyCarousel = styled.div`
   }
 `;
 export const PropertyDetails = styled.div`
-
+  max-width: 500px;
+  margin: 50px 0px;
+  button {
+    float: right;
+  }
+  div {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.15px;
+  }
 `;

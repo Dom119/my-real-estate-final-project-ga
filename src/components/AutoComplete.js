@@ -70,9 +70,9 @@ const Autocomplete = (props) => {
         );
       } else {
         return (
-          <div className="no-autocomplete">
-            <em>Not found</em>
-          </div>
+          <ul className="no-autocomplete">
+            <li>Not found</li>
+          </ul>
         );
       }
     }
@@ -85,6 +85,7 @@ const Autocomplete = (props) => {
         onChange={onChange}
         onKeyDown={onKeyDown}
         value={input}
+        placeholder="Enter your suburb..."
       />
       {renderAutocomplete()}
     </StyledAutoCompletionButton>

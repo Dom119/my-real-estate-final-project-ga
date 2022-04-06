@@ -72,14 +72,16 @@ export const ContainerHorizontal = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
 export const Container = styled.div`
-  width: 60%;
+  width: 75%;
   margin: 0 auto;
 `;
 export const BigContainer = styled.div`
   width: 92.5%;
   margin: 0 auto;
 `;
+
 export const Button = styled.button`
   margin: 20px;
   width: 180px;
@@ -102,6 +104,7 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
+
 export const Input = styled.input`
   display: block;
   width: 100%;

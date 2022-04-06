@@ -5,7 +5,7 @@ import {
   ContainerVerticalFull,
   Input,
 } from "../../styles/Global.js";
-import { StyledLoginPage } from "../../styles/LoginPage.styled.js";
+import { StyledLoginForm, StyledLoginPage } from "../../styles/LoginPage.styled.js";
 import { useDispatch } from "react-redux";
 import { setUserAsync } from "../../features/user/userSlice.js";
 import { useNavigate } from "react-router-dom";
@@ -89,9 +89,8 @@ function LoginPage() {
   };
 
   return (
-    <ContainerVerticalFull>
       <StyledLoginPage>
-        <ContainerVertical>
+        <StyledLoginForm>
           <h1>Welcome Back</h1>
           <p>Sign in with your account</p>
           <form onSubmit={handleSignIn}>
@@ -111,8 +110,8 @@ function LoginPage() {
             />
             <Button onClick={handleSignIn}>SIGN IN</Button>
           </form>
-        </ContainerVertical>
-        <ContainerVertical>
+        </StyledLoginForm>
+        <StyledLoginForm>
           <h1>Create Account</h1>
           <p>
             Not signed up ? <span>Create an account</span>
@@ -134,9 +133,8 @@ function LoginPage() {
             />
             <Button onClick={handleSignUp}>SIGN UP</Button>
           </form>
-        </ContainerVertical>
+        </StyledLoginForm>
       </StyledLoginPage>
-    </ContainerVerticalFull>
   );
 }
 
