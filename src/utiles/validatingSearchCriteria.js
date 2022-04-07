@@ -23,7 +23,7 @@ export default function validatingSearchCriteria({
       "Max-bathrooms needs to be bigger than or equal to min-bathrooms"
     );
   if (
-    parseInt(maxBedrooms) <= parseInt(minBedrooms) &&
+    parseInt(maxBedrooms) < parseInt(minBedrooms) &&
     maxBedrooms !== "Any" &&
     minBedrooms !== "Any"
   )
@@ -31,7 +31,7 @@ export default function validatingSearchCriteria({
       "Max-bedrooms needs to be bigger than or equal to min-bedrooms"
     );
   if (
-    parseInt(maxCarspaces) <= parseInt(minCarspaces) &&
+    parseInt(maxCarspaces) < parseInt(minCarspaces) &&
     maxCarspaces !== "Any" &&
     minCarspaces !== "Any"
   )
@@ -39,7 +39,7 @@ export default function validatingSearchCriteria({
       "Max-Carspaces needs to be bigger than or equal to min-Carspaces"
     );
   if (
-    parseInt(maxLandArea) <= parseInt(minLandArea) &&
+    parseInt(maxLandArea) < parseInt(minLandArea) &&
     maxLandArea !== "Any" &&
     minLandArea !== "Any"
   )
@@ -47,7 +47,7 @@ export default function validatingSearchCriteria({
       "Max-LandArea needs to be bigger than or equal to min-LandArea"
     );
   if (
-    parseInt(maxPrice) <= parseInt(minPrice) &&
+    parseInt(maxPrice) < parseInt(minPrice) &&
     maxPrice !== "Any" &&
     minPrice !== "Any"
   )

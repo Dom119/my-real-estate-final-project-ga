@@ -17,10 +17,12 @@ import KEY from "../../utiles/key";
 import { Button, Container, ContainerHorizontal } from "../../styles/Global";
 import { toggleSearchModal } from "../../features/modal/modalSlice";
 import FavButton from "../FavButton";
+import { selectUser } from "../../features/user/userSlice";
 
 export default function PropertiesPage() {
   const search = useSelector(selectSearch);
   const data = useSelector(selectData);
+  const currentUser = useSelector(selectUser);
 
   const navigate = useNavigate();
 
@@ -81,10 +83,13 @@ export default function PropertiesPage() {
                 <div>
                   <ButtonWrapperStyled>
                     <h3>{house.listing.propertyDetails.allPropertyTypes[0]}</h3>
-                    <FavButton
-                      current={house.listing}
-                      propertyID={house.listing.id}
-                    />
+                    {/* if here------------------------------------------------- */}
+                    {currentUser.userName !== "" && (
+                      <FavButton
+                        current={house.listing}
+                        propertyID={house.listing.id}
+                      />
+                    )}
                   </ButtonWrapperStyled>
                   <h3>
                     {house.listing.propertyDetails.streetNumber}{" "}
