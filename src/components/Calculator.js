@@ -9,8 +9,7 @@ export default function Calculator() {
   const [payment, setPayment] = useState(0);
 
   const handleClick = () => {
-
-    if (totalLoan ==="" || interest ==="" || year==="") setPayment(0.00)
+    if (totalLoan === "" || interest === "" || year === "") setPayment(0.0);
 
     let ir = interest / 12 / 100;
     let np = 12 * year;

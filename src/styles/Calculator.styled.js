@@ -18,6 +18,7 @@ export const StyledCalculator = styled.div`
     }
     button{
         width: auto;
+        height: auto;
         padding: 10px 20px;
     }
 `

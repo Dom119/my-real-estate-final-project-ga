@@ -34,4 +34,20 @@ export const StyledNavBar = styled.div`
       border: 1px solid;
     }
   }
+
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const StyledNavBarElements = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;

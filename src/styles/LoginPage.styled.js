@@ -7,7 +7,6 @@ export const StyledLoginPage = styled.div`
   align-items: center;
   text-align: center;
 
- 
   margin: 70px 0px;
   input {
     width: 25rem;
@@ -15,11 +14,15 @@ export const StyledLoginPage = styled.div`
   div {
     margin: 20px;
   }
+
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const StyledLoginForm = styled.div`
-padding: 50px 30px;
-margin: 50px 30px;
+  padding: 50px 30px;
+  margin: 50px 30px;
   box-shadow: 10px 10px 10px #d1d9e6, -10px -10px 10px #f9f9f9;
-
-`
+`;

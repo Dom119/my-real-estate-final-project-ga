@@ -6,6 +6,10 @@ export const StyledPropertiesPage = styled.div`
   justify-content: center;
   align-items: center;
   margin: auto;
+
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const House = styled.div`
@@ -34,6 +38,10 @@ export const HousePhoto = styled.div`
     top: 5px;
     width: 100px;
     height: auto;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 200px;
+    height: 170px;
   }
 `;
 

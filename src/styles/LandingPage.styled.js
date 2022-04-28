@@ -6,6 +6,12 @@ export const StyledLandingPage = styled.div`
     width: 100%;
     border-radius: 15px;
   }
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const SearchBox = styled.div`
   position: absolute;
@@ -34,6 +40,29 @@ export const SearchBox = styled.div`
     width: auto;
     padding: 20px 30px;
   }
+
+  @media only screen and (max-width: 1000px) {
+    height: 160px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: static;
+
+    margin: 20px 0px;
+
+    button {
+      width: 100px;
+      padding: 0px;
+    }
+
+    input {
+      border: 1px solid black;
+    }
+  }
 `;
 
 export const Explore = styled.div`
@@ -42,7 +71,7 @@ export const Explore = styled.div`
 
   button {
     padding: 15px 20px;
-    margin: 0 10px;
+    margin: 10px 10px;
     border-radius: 50px;
     border: 1px solid black;
     font-weight: 700;
@@ -72,31 +101,37 @@ export const ExploreElement = styled.div`
     box-shadow: 5px 5px 10px;
     border-radius: 5px;
   }
-  p, h3, h5 {
+  p,
+  h3,
+  h5 {
     text-align: left;
     margin: 10px 0px;
   }
   img {
     max-width: 200px;
   }
-  h5{
+  h5 {
     color: blue;
     font-size: 15px;
   }
+  @media only screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
-export const StyledFooter=styled.div`
+export const StyledFooter = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 30px 0px;
-  div{
+  div {
     display: flex;
     flex-wrap: wrap;
   }
 
-  p, i{
+  p,
+  i {
     margin: 0px 10px;
-
   }
-`
+`;
